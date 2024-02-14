@@ -9,9 +9,38 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Componentes de flutter'),
       ),
-        body: const Center(
-          child: Text('Hello World!'),
-        ),
+        body: ListView(
+          children: const [
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+            Text('KC campeones de la SB'),
+          ],
+        ) 
       );
   }
 }
