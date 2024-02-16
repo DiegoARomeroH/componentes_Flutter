@@ -7,28 +7,27 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Componentes de flutter', style: TextStyle(color: Colors.cyan),), 
+        title: const Text('Componentes de flutter'), 
       ),
         body: ListView(
-          children: const [
+          children: [
             ListTile(
-              leading: Icon(Icons.boy),
+              leading: const Icon(Icons.boy),
               title: Text('KC campeones de la SB',
-                     style: TextStyle(
-                     color: Colors.amber, 
-                     fontWeight: FontWeight.bold),),
-              subtitle: Text('11-02-2024 - Las vegas'),
-              trailing: Icon(Icons.arrow_circle_right),
+              style: Theme.of(context).textTheme.headlineLarge,
+              ),
+              subtitle: const Text('11-02-2024 - Las vegas'),
+              trailing: const Icon(Icons.arrow_circle_right),
             ),
-            Divider(),
-            ListTile(
+            const Divider(),
+            const ListTile(
               leading:  Icon(Icons.bolt),
               title: Text('KC campeones de la SB'),
               subtitle: Text('10-02-2023 - Arizona'),
               trailing: Icon(Icons.arrow_circle_right),
             ),
-            Divider(),
-            ListTile(
+            const Divider(),
+            const ListTile(
               leading: Icon(Icons.ac_unit),
               title: Text('KC campeones de la SB'),
               subtitle: Text('10-02-2023 - California'),
