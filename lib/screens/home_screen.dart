@@ -17,23 +17,28 @@ class HomeScreen extends StatelessWidget {
               style: Theme.of(context).textTheme.headlineLarge,
               ),
               subtitle: const Text('Diferentes widgets para entradas de flutter'),
-              trailing: const Icon(Icons.input_outlined),
+              trailing: const Icon(Icons.arrow_circle_right),
             ),
             const Divider(),
 
-            const ListTile(
-              leading:  Icon(Icons.list_alt_rounded),
-              title: Text('ListView.builder'),
-              subtitle: Text('Scroll infinito'),
-              trailing: Icon(Icons.arrow_circle_right),
+            ListTile(
+              leading:  const Icon(Icons.list_alt_rounded),
+              title: Text('ListView.builder', 
+              style: Theme.of(context).textTheme.headlineLarge
+              ),
+              subtitle: const Text('Scroll infinito'),
+              trailing: const Icon(Icons.arrow_circle_right),
               
             ),
             const Divider(),
-            const ListTile(
-              leading: Icon(Icons.notification_add),
-              title: Text('Notificaciones'),
-              subtitle: Text('Creación de noticaciones'),
-              trailing: Icon(Icons.arrow_circle_right),
+
+            ListTile(
+              leading: const Icon(Icons.notification_add),
+              title: Text('Notificaciones',
+              style: Theme.of(context).textTheme.headlineLarge
+              ),
+              subtitle: const Text('Creación de noticaciones'),
+              trailing: const Icon(Icons.arrow_circle_right),
             ),
           ],
         ) 
