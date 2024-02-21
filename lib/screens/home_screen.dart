@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:parctica_3_flutter/screens/infinite_list_screen.dart';
+import 'package:parctica_3_flutter/screens/inputs_screens.dart';
+import 'package:parctica_3_flutter/screens/notifications_screen.dart';
 import 'package:parctica_3_flutter/theme/app_theme.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -21,7 +24,15 @@ class HomeScreen extends StatelessWidget {
               subtitle: Text('Diferentes widgets para entradas de flutter', 
               style: AppTheme.lightTheme.textTheme.bodySmall,
               ),
-              trailing: const Icon(Icons.arrow_circle_right),
+              trailing: const Icon(
+                Icons.arrow_circle_right
+              ),
+              onTap:() {
+                final ruta1 = MaterialPageRoute(builder: (context){
+                  return const Inputscreen();
+                });
+                Navigator.push(context, ruta1);
+              },
             ),
             const Divider(),
 
@@ -35,7 +46,12 @@ class HomeScreen extends StatelessWidget {
               style: AppTheme.lightTheme.textTheme.bodySmall,
               ),
               trailing: const Icon(Icons.arrow_circle_right),
-              
+              onTap:() {
+                final ruta2 = MaterialPageRoute(builder: (context){
+                  return const InfiniteList();
+                });
+                Navigator.push(context, ruta2);
+              }
             ),
             const Divider(),
 
@@ -49,6 +65,12 @@ class HomeScreen extends StatelessWidget {
               style: AppTheme.lightTheme.textTheme.bodySmall,
               ),
               trailing: const Icon(Icons.arrow_circle_right),
+              onTap:() {
+                final ruta3 = MaterialPageRoute(builder: (context){
+                  return const NotificationsScreen();
+                });
+                Navigator.push(context, ruta3);
+              }
             ),
           ],
         ) 
