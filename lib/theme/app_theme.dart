@@ -12,7 +12,31 @@ class AppTheme{
   // Declaraciones del tema 
   static final ThemeData lightTheme = ThemeData.light().copyWith(
     scaffoldBackgroundColor: backColor,
-        appBarTheme: const AppBarTheme(color: maincolor),
+        appBarTheme: AppBarTheme(
+          color: maincolor,
+          titleTextStyle:  GoogleFonts.aBeeZee(
+            color: letterColor,
+            fontSize: 28.5,
+            fontWeight: FontWeight.bold,
+          ),
+          ),
+        iconTheme: const IconThemeData(
+            color: iconColor,
+            size: 35.0,
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(
+              maincolor),
+              
+              foregroundColor: MaterialStateProperty.all(letterColor),
+
+              textStyle: MaterialStateProperty.all(
+                GoogleFonts.aBeeZee(color: letterColor, 
+                fontSize: 22.0), 
+              ),
+           ),
+        ),
         textTheme: TextTheme(
           headlineLarge: GoogleFonts.montserrat(
             color: letterColor,
