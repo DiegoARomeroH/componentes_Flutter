@@ -7,6 +7,7 @@ class AppTheme{
   static const backColor = Color.fromARGB(169, 199, 199, 199);
   static const letterColor = Color.fromARGB(255, 0, 0, 0);
   static const iconColor = Color.fromARGB(230, 0, 71, 78);
+  static const whiteColor = Color.fromARGB(255, 255, 255, 255);
 
 
   // Declaraciones del tema 
@@ -47,6 +48,14 @@ class AppTheme{
             decorationStyle: TextDecorationStyle.double,
             decorationThickness: 2.5,
             fontStyle: FontStyle.italic,
+          ),
+
+          headlineMedium: GoogleFonts.montserrat(
+            color: letterColor,
+            fontSize: 23.0,
+            fontWeight: FontWeight.w500,
+            decorationStyle: TextDecorationStyle.double,
+            decorationThickness: 2.5,
           ),
 
           bodySmall: GoogleFonts.aBeeZee(
