@@ -67,6 +67,13 @@ class AppTheme{
             decorationThickness: 2.0,
             fontStyle: FontStyle.italic,
           ),
+
+          bodyMedium: GoogleFonts.aBeeZee(
+            color: letterColor,
+            fontWeight: FontWeight.bold,
+            fontSize: 10.0,
+            fontStyle: FontStyle.italic,
+          ),
         ),
   );
 }
