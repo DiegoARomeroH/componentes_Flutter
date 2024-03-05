@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parctica_3_flutter/screens/images_screen.dart';
 import 'package:parctica_3_flutter/screens/infinite_list_screen.dart';
 import 'package:parctica_3_flutter/screens/inputs_screens.dart';
 import 'package:parctica_3_flutter/screens/notifications_screen.dart';
@@ -58,6 +59,7 @@ class HomeScreen extends StatelessWidget {
               style: AppTheme.lightTheme.textTheme.bodySmall,
               ),
               trailing: const Icon(Icons.arrow_circle_right),
+              
               onTap:() {
                 final ruta2 = MaterialPageRoute(builder: (context){
                   return const InfiniteList();
@@ -84,6 +86,30 @@ class HomeScreen extends StatelessWidget {
                   return const NotificationsScreen();
                 });
                 Navigator.push(context, ruta3);
+              }
+            ),
+            const Divider(),
+            
+            ListTile(
+              leading: IconTheme(
+                data: AppTheme.lightTheme.iconTheme,
+                child: const Icon(Icons.image),
+              ),
+              title: Text(
+                'Imágenes',
+                style: AppTheme.lightTheme.textTheme.headlineLarge,
+                ),
+                subtitle: Text('widgets de manejo de imágenes', 
+                style: AppTheme.lightTheme.textTheme.bodySmall,
+                ),
+                
+                trailing: const Icon(Icons.arrow_circle_right),
+                
+              onTap:() {
+                final ruta4 = MaterialPageRoute(builder: (context){
+                  return const ImagesScreen();
+                });
+                Navigator.push(context, ruta4);
               }
             ),
           ],
