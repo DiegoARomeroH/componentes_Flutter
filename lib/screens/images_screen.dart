@@ -20,7 +20,8 @@ class _ImagesScreenState extends State<ImagesScreen> {
       ),
       body: ListView(
         children:  [
-          imageCard()
+          imageCard(),
+          imageWeb(),
         ],
       )
     );
@@ -29,13 +30,35 @@ class _ImagesScreenState extends State<ImagesScreen> {
   Card imageCard(){
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-      child: const SizedBox(
-          height: 290,
-          width: 350,
-          child: Image(
-            image: AssetImage('assets/img/Pou.jpg')
+      margin: const EdgeInsets.all(20),
+      elevation: 10,
+      child: SizedBox(
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(30),
+            child: Column(
+          children: [
+            const Image(
+              image: AssetImage('assets/img/pou.jpg'),
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              child: Text(
+              'Pug', 
+              style: AppTheme.lightTheme.textTheme.headlineMedium
+              ),
+            ),
+          ],
         ),
       ),
+    )
     );
   }
+
+  Widget imageWeb() {
+    return Center(
+      child: Image.network(
+        'https://thehappening.com/wp-content/uploads/2022/05/pugs-3.jpg'),
+    );
+  }
+
 }
