@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:parctica_3_flutter/theme/app_theme.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class ImagesScreen extends StatefulWidget {
   const ImagesScreen({super.key});
@@ -43,7 +44,7 @@ class _ImagesScreenState extends State<ImagesScreen> {
             Container(
               padding: const EdgeInsets.all(10),
               child: Text(
-              'Pug', 
+              'Pug Lozano', 
               style: AppTheme.lightTheme.textTheme.headlineMedium
               ),
             ),
@@ -54,10 +55,31 @@ class _ImagesScreenState extends State<ImagesScreen> {
     );
   }
 
-  Widget imageWeb() {
-    return Center(
-      child: Image.network(
-        'https://thehappening.com/wp-content/uploads/2022/05/pugs-3.jpg'),
+  Stack imageWeb() 
+  {
+    return Stack(
+      children: <Widget>[
+        const Center(
+            child: CircularProgressIndicator(
+              backgroundColor: Color.fromARGB(255, 0, 255, 217),
+              color: Color.fromARGB(255, 0, 187, 178)
+              ),
+        ),
+        Center(
+        child: SizedBox(
+          height: 450,
+          width: 450,
+          child: 
+          FadeInImage.memoryNetwork(
+            placeholder: kTransparentImage, 
+            image: 'https://thehappening.com/wp-content/uploads/2022/05/pugs-3.jpg')
+          // Imagen de website
+          // Image.network(
+          
+          //   ),
+        ),
+      ),
+      ],
     );
   }
 
