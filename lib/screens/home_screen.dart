@@ -5,9 +5,43 @@ import 'package:parctica_3_flutter/screens/inputs_screens.dart';
 import 'package:parctica_3_flutter/screens/notifications_screen.dart';
 import 'package:parctica_3_flutter/theme/app_theme.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int selectedIndex = 0;
+  int selectedRadioOption = 0; // Para los RadioButton
+
+  void openScreen(int index) {
+    setState(() {
+      late MaterialPageRoute<dynamic> ruta;
+      switch (index) {
+        case 0:
+          ruta = MaterialPageRoute(builder: (context) => const HomeScreen());
+          break;
+        case 1:
+          ruta = MaterialPageRoute(builder: (context) => const InfiniteList());
+          break;
+        case 2:
+          ruta = MaterialPageRoute(builder: (context) => const NotificationsScreen());
+          break;
+        case 3:
+          ruta = MaterialPageRoute(builder: (context) => const ImagesScreen());
+          break;
+        default:
+          return;
+      }
+      selectedIndex = index;
+      Navigator.push(
+        context,
+        ruta,
+      );
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +73,7 @@ class HomeScreen extends StatelessWidget {
               ),
               onTap:() {
                 final ruta1 = MaterialPageRoute(builder: (context){
-                  return const Inputscreen();
+                  return const Inputsscreen();
                 });
                 Navigator.push(context, ruta1);
               },
@@ -58,14 +92,16 @@ class HomeScreen extends StatelessWidget {
               subtitle: Text('Scroll infinito',
               style: AppTheme.lightTheme.textTheme.bodySmall,
               ),
-              trailing: const Icon(Icons.arrow_circle_right),
-              
+              trailing: IconTheme(
+                data: AppTheme.lightTheme.iconTheme,
+                child: const Icon(Icons.arrow_circle_right),
+              ),
               onTap:() {
                 final ruta2 = MaterialPageRoute(builder: (context){
                   return const InfiniteList();
                 });
                 Navigator.push(context, ruta2);
-              }
+              },
             ),
             const Divider(),
 
@@ -113,7 +149,40 @@ class HomeScreen extends StatelessWidget {
               }
             ),
           ],
-        ) 
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+        currentIndex: selectedIndex,
+        backgroundColor: Colors.blue, // Cambia AppTheme.maincolor por el color que desees
+        onTap: (index) => openScreen(index),
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home,
+            color: AppTheme.maincolor,
+            ),
+            label: "Inicio"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.data_object,
+            color: AppTheme.maincolor,
+            ),
+            label: "Datos"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notification_add,
+            color: AppTheme.maincolor,
+            ),
+            label: "Notificaciones"),
+            BottomNavigationBarItem(
+            icon: Icon(Icons.image,
+            color: AppTheme.maincolor,
+            ),
+            label: "Imagenes", 
+            ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.exit_to_app,
+            color: AppTheme.maincolor,
+            ),
+            label: "Salir"),
+          ],
+          ),
       );
   }
 }
